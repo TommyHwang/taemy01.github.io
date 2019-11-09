@@ -1,3 +1,7 @@
+
+#add centrarium
+remote_theme : bencentra/centrarium
+
 # External plugins
 # See http://ixti.net/software/2013/01/28/using-jekyll-plugins-on-github-pages.html for making `jekyll archives` work.
 plugins:
@@ -19,7 +23,7 @@ description: >
 # and never end with a slash. Set it to a blank value if hosting at the
 # root of your server.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "" # the base hostname & protocol for your site
+url: "https://taemy01.github.io" # the base hostname & protocol for your site
 cover: "/assets/header_image.jpg"
 logo: "/assets/logo.png"
 
@@ -76,20 +80,6 @@ descriptions:
 #     desc: Follow me on Twitter            # Description to display as link title, etc
 #     share: true                           # Include in the "Share" section of posts
 social:
-  - name: Twitter
-    icon: twitter
-    username: TheBenCentra
-    url: https://twitter.com/TheBenCentra
-    desc: Follow me on Twitter
-    share: true
-
-  - name: Facebook
-    icon: facebook
-    username: thebencentra
-    url: ""
-    desc: Friend me on Facebook
-    share: true
-
   - name: GitHub
     icon: github
     username: bencentra
@@ -99,24 +89,10 @@ social:
 
   - name: LinkedIn
     icon: linkedin
-    username: Ben Centra
-    url: https://www.linkedin.com/pub/ben-centra/47/769/60a
+    username: Taemin Hwang
+    url: https://www.linkedin.com/in/taemin-hwang-02144b197/
     desc: Connect with me on LinkedIn
     share: true
-
-  - name: Google+
-    icon: google-plus
-    username: ""
-    url: ""
-    desc: Add me to your Circles
-    share: true
-
-  - name: YouTube
-    icon: youtube
-    username: ""
-    url: ""
-    desc: Subscribe on YouTube
-    share: false
 
   - name: Instagram
     icon: instagram
