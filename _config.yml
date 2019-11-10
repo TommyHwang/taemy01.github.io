@@ -101,8 +101,8 @@ social:
 
   - name: LinkedIn
     icon: linkedin
-    username: Ben Centra
-    url: https://www.linkedin.com/pub/ben-centra/47/769/60a
+    username: Taemin Hwang
+    url: https://www.linkedin.com/in/taemin-hwang-02144b197/
     desc: Connect with me on LinkedIn
     share: true
 
@@ -111,8 +111,7 @@ social:
     username: ""
     url: ""
     desc: Add me to your Circles
-    share: true
-
+    share: false
   - name: YouTube
     icon: youtube
     username: ""
@@ -132,7 +131,7 @@ social:
     username: ""
     url: ""
     desc: Follow me on Pinterest
-    share: true
+    share: false
 
   - name: SoundCloud
     icon: soundcloud
@@ -181,7 +180,7 @@ social:
     username: ""
     url: ""
     desc: Share to Reddit
-    share: true
+    share: false
 
   - name: "Hacker News"
     icon: hacker-news
