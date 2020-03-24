@@ -1,0 +1,58 @@
+layout: post
+title:  "Service Mesh와 Envoy, Istio"
+date:   2015-04-18T14:25:52-05:00
+author: TommyHwang
+categories: Dummy
+
+
+
+Service Mesh란
+
+ MSA(Micro Service Architecture)가 대두되면서 Application이 기능 단위로 분할되면서 하나의 서비스에 기존에 비해 많은 Application이 발생합니다. Monolithic 구조에서 몇번 왔다갔다하면 끝났던 통신이 기능단위별로 나눠지면서 Chain이 늘어나고 어떤 Application의 어떤 Message가 어떤 Application으로 라우팅되어야할지, 어떤 Message는 필터링 되어야하는지 등등 점점 규칙을 관리하기가 어려워지게 되었습니다.
+
+
+
+이를 해결하기 위해 나온 개념이 Service Mesh(서비스 메쉬)입니다. 
+
+
+
+Service Mesh는 서비스를 발견해주는 Service Discovery, Routing, Filtering의 역할을 해줍니다.
+
+
+
+이 Service Mesh의 역할을 하는 대표적인 서비스가 Envoy입니다.
+
+
+
+Sidecar 패턴
+
+ sidecar 패턴은 메인 기능을 하는 어플리케이션에 sidecar처럼 붙어 부기능을 하는 어플리케이션이 존재하는 패턴을 말합니다. 
+
+
+
+![image-20200324150533092](C:\Users\t1205.hwang\AppData\Roaming\Typora\typora-user-images\image-20200324150533092.png)
+
+ sidecar 패턴이 구성되는 이유는 비즈니스 로직이 들어가있는 어플리케이션의 동작과 그 외의 동작을 따로 떼어냄으로써 부기능의 추가나 변경 등에 비즈니스 로직이 영향을 받지 않도록 구성하기 위함입니다. 또한 부기능을 구현하기 위한 종속성이나 구성요소들이 메인 어플리케이션에 포함되어 불필요하게 메인 어플리케이션이 커지는 것을 방지하기 위해 Sidecar 패턴을 사용합니다.
+
+
+
+또한 분리되어 있기 때문에 서로 다른 구성요소로 구성될 수 있다는 장점도 있겠죠. 단점으로는  어플리케이션이 서로 분리되면서 어플리케이션 간 커뮤니케이션이 많아지면 그만큼 부하가 발생할 여지가 있다는 단점이 있습니다.
+
+
+
+ 대표적인 Sidecar 패턴의 usecase로는 Logging, Proxy 등이 있고, 앞서 설명드린 Service Mesh의 구현 또한 Sidecar 패턴의 usecase라고 할 수 있겠습니다.
+
+
+
+이 Sidecar 패턴으로 구성된 대표적인 Service Mesh 구현 예가 바로 Envoy입니다.
+
+
+
+Envoy
+
+Envoy는 L7 Service Mesh로, Sidecar Container로 구성됩니다. Envoy가 해주는 역할은 다음과 같습니다.
+
+
+
+Istio
+
