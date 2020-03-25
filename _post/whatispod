@@ -1,0 +1,41 @@
+Pod란
+
+ Kubernetes는 Container를 위한 Orchestration Platform입니다. 그렇다면 실질적으로 어떻게 이를 다루는지에 대해 알아볼 필요가 있겠습니다.
+
+사실 Kubernetes는 container 단위로 Orchestration을 하지 않고, Pod라는 단위로 시스템을 Orchestration합니다.
+
+즉 Pod는 Kubernetes에서 배포 가능한 최소 실행 단위이고, Cluster위에서 동작할 프로세스들을 나타냅니다.
+
+
+
+굳이 프로세스들 이라고 표현한 것은 Pod안에 여러 개의 Container가 존재할 수도 있기 때문입니다.
+
+ Pod안에 포함시킬 수 있는 것은 아래 그림처럼 Container 1 ~ N개, 혹은 Volume 0 ~ N개 등 정의하기 나름입니다. 물론 너무 많은 Container를 한 Pod에 몰아넣게 되면 Micro Service의 의미가 퇴색되는 감이 없지 않아 있지만 빠른 Communication이 필요하거나 로직 상 묶여있을 필요가 있는 Container들이라면 같은 Pod에 있는게 더 좋을 수 있습니다.
+
+
+
+그렇다면 Pod 1개에 Container 여러 개를 두는 것과 Container가 1개 있는 Pod를 여러 개 두는 것에는 어떤 차이가 있을까요?
+
+ 
+
+Pod의 특징
+
+이를 알기 위해서는 Networking, Storage 두 가지 면에서 Pod의 특징을 확인해볼 필요가 있겠습니다.
+
+
+
+Networking
+
+Storage
+
+
+
+Pod 운영하기
+
+
+
+Pod Controller
+
+
+
+Pod에 Container 하나만 포함할 경우에는 그냥 Wrapper역할을 하는 거고, 
